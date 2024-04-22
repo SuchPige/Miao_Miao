@@ -1,0 +1,103 @@
+<!doctype html>
+<!--Yifan Zhu s46703103 TUT01 Flexible-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Booking - Miao Miao</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/menu.js"></script>
+        <script src="js/image_hover.js"></script>
+        <script src="js/booking.js"></script>
+    </head>
+
+    <body>
+        <header id="header">
+            <a href="index.html">Miao Miao Cat Resort</a>
+            <a onclick="menuOpen()" href="#">
+                <img onmouseover="menuHoverOn(this)" onmouseout="menuHoverOff(this)" src="image&files/icons8-menu-24 white.png" alt="menu">
+            </a>
+        </header>
+
+        <!-- left menu -->
+        <div id="menu_left" class="menu">
+            <div id="menu_container">
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img onmouseover="insHoverOn(this)" onmouseout="insHoverOff(this)" src="image&files/icons8-instagram-32 white.png" alt="menu">
+                </a>
+                <p id="menu_foot">
+                    The website is a coursework for DECO7140 the University of Queensland.
+                    <br>All external sources used are listed <u><a onclick="refOpen()" href="#">here</a></u>.
+                    <br>Author: Yifan Zhu 46703103
+                </p>
+                <div id="menu_content">
+                    <li><a onclick="menuClose()" href="#">Back</a></li>
+                    <li><a onclick="menuClose()" href="index.html">Home</a></li>
+                    <li><a onclick="menuClose()" href="about.html">About</a></li>
+                    <li><a onclick="menuClose()" href="booking.html">Booking</a></li>
+                </div>
+            </div>
+        </div>
+
+        <!-- right menu -->
+        <div id="menu_right" class="menu">
+            <img id="menu_image" src="image&files/pexels-eberhard-grossgasteiger-1367067.jpg" alt="cat on green grass">
+        </div>
+
+        <!-- reference -->
+        <div id="reference" class="menu">
+            <div id="reference_container">
+                <p>Cat on Green Grass · Free Stock Photo. (2021). <br>Retrieved from 
+                    <u><a href="https://www.pexels.com/photo/cat-on-green-grass-3861171/" target="_blank">https://www.pexels.com/photo/cat-on-green-grass-3861171/</a></u>
+                </p>
+                <p>Google Fonts. (2021). <br>Retrieved from 
+                    <u><a href="https://fonts.google.com/specimen/Lora?query=lora/" target="_blank">https://fonts.google.com/specimen/Lora?query=lora/</a></u>
+                </p>
+                <p>Cat Icon – Free Download, PNG and Vector. (2021). <br>Retrieved from 
+                    <u><a href="https://icons8.com/icon/121409/cat/" target="_blank">https://icons8.com/icon/121409/cat/</a></u>
+                </p>
+                <p>Instagram Icon – Free Download, PNG and Vector. (2021). <br>Retrieved from 
+                    <u><a href="https://icons8.com/icon/32320/instagram/" target="_blank">https://icons8.com/icon/32320/instagram/</a></u>
+                </p>
+                <p>Menu Icon – Free Download, PNG and Vector. (2021). <br>Retrieved from 
+                    <u><a href="https://icons8.com/icon/3761/menu/" target="_blank">https://icons8.com/icon/3761/menu/</a></u>
+                </p>
+                <span><u><a onclick="refClose()" href="#">Back</a></u></span>
+            </div>
+        </div>
+
+        <!-- content -->
+        <main id="mian" class="display_true">
+            <div id="booking_container">
+                <div id="booking_title">Cats Awaiting You.</div>
+                <form name="booking_form" method="GET" id="booking_form" onsubmit="showAlert()">
+                    <div class="field">
+                        <label>First Name</label>
+                        <input type="text" name="First Name" id="fName" class="input" required>
+                    </div>
+                    <div class="field">
+                        <label>Last Name</label>
+                        <input type="text" name="Last Name" id="lName" class="input" required>
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" name="Email" id="email" class="input" required>
+                    </div>
+                    <div class="field">
+                        <label>Number of Room</label>
+                        <input type="number" name="Number of Room" id="room" class="input" required>
+                    </div>
+                    <div class="field">
+                        <label>Date of Arrival</label>
+                        <input type="date" name="Date of Arrival" id="arrival" class="input" required>
+                    </div>
+                    <div class="field">
+                        <label>Date of Departure</label>
+                        <input type="date" name="Date of Departure" id="departure" class="input" required>
+                    </div>
+                    <div class="field"></div>
+                    <div class="field"><button id="submit_button" type="submit">Submit</button></div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

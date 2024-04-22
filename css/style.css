@@ -1,0 +1,402 @@
+/* CSS Yifan Zhu s46703103 TUT01 Flexible*/
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+
+/* customized animation */
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-up{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-right{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(16px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-left{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(-16px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-down{
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* overall config */
+html{
+    color: white;
+    font-family: 'Lora', serif;
+}
+
+body{
+    background-image: url("../image&files/pexels-malek-dridi-3861171-alpha30.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    height: 96vh;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    padding: 1%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    animation: fade-in 3s ease 0s;
+}
+
+main{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    animation: fade-up 3s ease;
+}
+
+a:visited, a:link{
+    color: white;
+    text-decoration: none;
+}
+
+
+/* homepage */
+#mian_container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 8em;
+    font-size: 48px;
+}
+
+#book_button{
+    text-align: center;
+    color: tan;
+    font-size: 28px;
+    transition: all 0.3s ease-out 0s;
+}
+
+#book_button:hover{
+    letter-spacing: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in 0s;
+}
+
+
+/* about */
+#slide_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: auto;
+    width: 50%;
+    height: 30%;
+    padding: 2em;
+    font-size: 18px;
+}
+
+.slide{
+    display: none;
+    flex-direction: column;
+    width: 90%;
+    padding: 3em;
+    align-items: flex-start;
+    animation: fade-in 1.5s ease 0s;
+}
+
+.slide_text{
+    margin: auto;
+    word-wrap: break-word;
+}
+
+.controller{
+    font-size: 30px;
+}
+
+.controller:hover{
+    transform: scale(1.5);
+    transition: all 0.4s ease 0s;
+    color: tan;
+}
+
+
+/* booking */
+#booking_container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 25em;
+}
+
+#booking_title{
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 0.3em;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#booking_form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 900px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 160px;
+    padding: 1em 2em 1em 2em;
+}
+
+.input{
+    background-color: transparent;
+    color: white;
+    outline: thin;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid white;
+    padding-top: 0.6em;
+}
+
+#submit_button{
+    margin: auto;
+    background-color: rgba(210, 180, 140, 0.8);
+    color: white;
+    padding: 1em 2em 1em 2em;
+    border: thin;
+    transition: background-color 0.4s ease-in 0s;
+}
+
+#submit_button:hover{
+    background-color: rgba(0, 128, 128, 0.8);
+    cursor: pointer;
+    transition: background-color 0.4s ease-out 0s;
+}
+
+
+/* menu */
+.menu{
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 1.2s ease-in-out 0s;
+}
+
+/* left menu */
+#menu_left{
+    left: 0;
+    width: 0%;
+}
+
+#menu_container{
+    display: none;
+    flex-direction: column-reverse;
+    margin: auto;
+    height: 85%;
+    width: 60%;
+    text-align: right;
+    animation: fade-left 2s ease 0s;
+}
+
+#menu_content{
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid white;
+    font-size: 40px;
+    padding-right: 20px;
+    line-height: 1.5em;
+    list-style: none;
+}
+
+#menu_foot{
+    font-size: 15px;
+    line-height: 1.4em;
+}
+
+#menu_container a{
+    transition: all 0.2s ease-in 0s;
+}
+
+#menu_container a:hover{
+    transition: all 0.3s ease-out 0s;
+    color: tan;
+}
+
+/* right menu */
+#menu_right{
+    right: 0;
+    width: 0%;
+}
+
+#menu_image{
+    display: block;
+    margin: auto;
+    height: 85%;
+    animation: fade-right 2s ease 0s;
+}
+
+/* reference */
+#reference{
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: transparent;
+}
+
+#reference_container{
+    display: none;
+    flex-direction: column;
+    margin: auto;
+    word-wrap: break-word;
+    padding: 2em;
+    width: 60%;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.3);
+    animation: fade-down 2.4s ease-in-out 0s;
+}
+
+#reference_container span{
+    text-align: right;
+}
+
+#reference_container a:hover{
+    transition: all 0.5s ease-out 0s;
+    color: tan;
+}
+
+
+/* class controlling visibility of content */
+.display_true{
+    visibility: visible;
+    transition: all 0s ease 0.6s;
+}
+
+.display_false{
+    visibility: hidden;
+    transition: all 0s ease 0.6s;
+}
+
+
+/* responsive config */
+@media only screen and (max-width: 960px){
+    /* overall */
+    header{
+        font-size: 24px;
+    }
+
+    /* homepage */
+    #mian_container{
+        font-size: 32px;
+        padding-top: 12em;
+        word-wrap:break-word;
+    }
+
+    /* about */
+    #slide_container{
+        width: 80%;
+        height: 70%;
+        padding: 1em;
+    }
+    
+    .slide{
+        padding: 1em;
+    }
+
+    /* booking */
+    #book_button{
+        font-size: 24px;
+    }
+
+    #booking_container{
+        padding-top: 0em;
+    }
+    
+    #booking_title{
+        visibility: hidden;
+    }
+    
+    #booking_form{
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: auto;
+    }
+
+    /* menu */
+    #menu_content{
+        font-size: 32px;
+    }
+
+    #menu_foot{
+        font-size: 13px;
+    }
+
+    #reference_container{
+        width: 80%;
+        font-size: 13px;
+    }
+}
